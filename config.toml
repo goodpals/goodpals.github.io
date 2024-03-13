@@ -21,14 +21,17 @@ footer_copyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/
 pals = [
     { name = "Alex Baker", links = [
         { name = "website", link = "https://alxbkr.xyz" },
-        { name = "github", link = "https://github.com/alexobviously" }
+        { name = "github", link = "https://github.com/alexobviously" },
+        { name = "pet", link = "/pets/alex.jpg" }
     ]},
     { name = "Callum Beaney", links = [
         { name = "website", link = "https://callumbeaney.github.io/" },
-        { name = "github", link = "https://github.com/CallumBeaney" }
+        { name = "github", link = "https://github.com/CallumBeaney" },
+        { name = "pet", link = "/pets/cal.jpg" }
     ]},
     { name = "Steve Beville", links = [
-        { name = "github", link = "https://github.com/TheBeville" }
+        { name = "github", link = "https://github.com/TheBeville" },
+        { name = "pet", link = "/pets/steve.jpg" }
     ]}
 ]
 
