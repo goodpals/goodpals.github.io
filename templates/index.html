@@ -38,26 +38,30 @@
 	
 	{% block title %}
 	<div id="spotlight" class="animated fadeIn">
-	  <div id="home-center">
-		<h1 id="home-title">{{config.title}}</h1>
-		<p id="home-subtitle">{{config.extra.home_subtitle}}</p>
-		<div id="home-social">
-		  {{more_macros::social_icon_row(icons=config.extra.hermit_social)}}
+		<img src="https://raw.githubusercontent.com/goodpals/.github/main/profile/gpg_logo-3.png" style="align-self:center; width: 50vh; padding-top: 5%;">  <!-- Cannot get the fucking theme to behave -->
+		<div id="home-center">
+			
+			<h1 id="home-title">{{config.title}}</h1>
+			<p id="home-subtitle">{{config.extra.home_subtitle}}</p>
+			{% endblock title %}
+			{% block main %}
+				<nav id="pals-nav" class="site-nav">
+						{% for pal in config.extra.pals %}
+							<div>{{pal.name}}    {{more_macros::social_icon_row(icons=pal.links)}}</div>
+						{% endfor %} 
+				</nav>
+				
+				<div id="home-social" style="  padding-top: 30%;"> <!-- Cannot get the fucking theme to behave -->
+					{{more_macros::social_icon_row(icons=config.extra.hermit_social)}}
+				</div>
+
+			<nav id="home-nav" class="site-nav">
+				{% for s in config.extra.hermit_menu %}
+				<a href="{{config.base_url ~ s.link}}">{{s.name}}</a>
+				{% endfor %}
+			</nav>
+			{% endblock main %}
 		</div>
-		{% endblock title %}
-		{% block main %}
-        <nav id="pals-nav" class="site-nav">
-            {% for pal in config.extra.pals %}
-            <div>{{pal.name}}     {{more_macros::social_icon_row(icons=pal.links)}}</div>
-            {% endfor %}
-        </nav>
-		<nav id="home-nav" class="site-nav">
-		  {% for s in config.extra.hermit_menu %}
-		  <a href="{{config.base_url ~ s.link}}">{{s.name}}</a>
-		  {% endfor %}
-		</nav>
-		{% endblock main %}
-	  </div>
 	  
 	  {% block footer %}
 	  <div id="home-footer">
