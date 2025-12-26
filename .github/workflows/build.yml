@@ -1,7 +1,7 @@
 name: Build Zola Site
 
 permissions:
-    contents: write  
+    contents: write
 
 on:
   push:
@@ -13,9 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v3.0.0
+        uses: actions/checkout@v4
       - name: build_and_deploy
-        uses: shalzz/zola-deploy-action@v0.18.0
+        uses: shalzz/zola-deploy-action@v0.21.0
         env:
           PAGES_BRANCH: gh-pages
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
